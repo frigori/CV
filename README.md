@@ -4,10 +4,15 @@ Repository privata per versionare il curriculum in più lingue.
 
 ## Struttura
 
-- `cv/it/` — curriculum in italiano
-- `cv/en/` — curriculum in inglese
+- `cv/it/` — curriculum in italiano (`CV-IT.tex`)
+- `cv/en/` — curriculum in inglese (`CV_EN.tex`)
 - `data/` — dati condivisi e note di aggiornamento
 - `assets/` — foto, loghi o altri asset opzionali
+
+## File principali
+
+- Italiano: `cv/it/CV-IT.tex`
+- English: `cv/en/CV_EN.tex`
 
 ## Workflow consigliato
 
