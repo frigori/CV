@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
-\usepackage[margin=2cm, top=1.6cm, bottom=1.6cm]{geometry}
+\usepackage[margin=1.55cm, top=1.15cm, bottom=1.15cm]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
@@ -30,20 +30,20 @@
 \titleformat{\section}
   {\large\bfseries\color{darkgray}}
   {}{0em}{}
-  [\vspace{0.25em}\color{lightgray}\hrule\vspace{0.35em}]
+  [\vspace{0.18em}\color{lightgray}\hrule\vspace{0.16em}]
 
-\titlespacing{\section}{0pt}{0.9em}{0.4em}
+\titlespacing{\section}{0pt}{0.65em}{0.28em}
 
 \pagestyle{empty}
 
-\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.2em}
+\setlist[itemize]{noitemsep, topsep=1pt, leftmargin=1.05em}
 
 % Custom commands
 \newcommand{\entry}[4]{%
   \noindent\textbf{#1} \hfill \textcolor{accent}{#2}\\
   \textit{\textcolor{lightgray}{#3}}%
   \ifx&#4&\else\\\vspace{0.15em}#4\fi
-  \vspace{0.35em}
+  \vspace{0.22em}
 }
 
 \newcommand{\entrylist}[5]{%
@@ -52,11 +52,11 @@
   \ifx&#4&\else\\\vspace{0.15em}#4\fi
   \vspace{0.2em}
   \begin{itemize}#5\end{itemize}
-  \vspace{0.25em}
+  \vspace{0.16em}
 }
 
 \newcommand{\skillgroup}[2]{%
-  \noindent\textbf{#1:} #2\par\vspace{0.25em}
+  \noindent\textbf{#1:} #2\par\vspace{0.16em}
 }
 
 %--------------------------
@@ -77,10 +77,10 @@
 \hfill
 \begin{minipage}[c]{0.22\textwidth}
   \raggedleft
-  \includegraphics[width=2.8cm,height=2.8cm,keepaspectratio]{../../assets/mattia-retail-photo.jpg}
+  \includegraphics[width=2.25cm,height=2.25cm,keepaspectratio]{../../assets/mattia-retail-photo.jpg}
 \end{minipage}
 
-\vspace{0.35em}
+\vspace{0.22em}
 
 %--- PROFILE ---%
 \section{Profilo}
