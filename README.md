@@ -14,6 +14,7 @@ Repository privata per versionare il curriculum in più lingue.
 - Italiano accademico/AI: `cv/it/CV-IT.tex`
 - English academic/AI: `cv/en/CV_EN.tex`
 - Italiano retail part-time: `cv/it/CV-IT-retail.tex`
+- Italiano retail part-time con foto: `cv/it/CV-IT-retail-photo.tex`
 
 ## Build automatico
 
@@ -24,6 +25,7 @@ I PDF completi vengono pubblicati come artifact separati e privati del workflow:
 - `cv-it-pdf` — PDF completo del CV italiano
 - `cv-en-pdf` — PDF completo del CV inglese
 - `cv-it-retail-pdf` — PDF privato del CV italiano orientato a retail/lavoro part-time
+- `cv-it-retail-photo-pdf` — PDF privato del CV italiano retail con foto
 
 Le versioni public-safe, senza numero di telefono, sono compilate da:
 
