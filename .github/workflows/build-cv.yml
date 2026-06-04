@@ -14,11 +14,21 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
     name: Compile LaTeX CVs
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -30,20 +40,74 @@ jobs:
           root_file: |
             cv/it/CV-IT.tex
             cv/en/CV_EN.tex
+            cv/it/CV-IT-public.tex
+            cv/en/CV_EN-public.tex
           latexmk_use_xelatex: false
           work_in_root_file_dir: true
           args: -pdf -interaction=nonstopmode -file-line-error -halt-on-error
 
-      - name: Upload Italian CV PDF
+      - name: Upload private Italian CV PDF
         uses: actions/upload-artifact@v4
         with:
           name: cv-it-pdf
           path: cv/it/CV-IT.pdf
           if-no-files-found: error
 
-      - name: Upload English CV PDF
+      - name: Upload private English CV PDF
         uses: actions/upload-artifact@v4
         with:
           name: cv-en-pdf
           path: cv/en/CV_EN.pdf
           if-no-files-found: error
+
+      - name: Prepare public site
+        if: github.event_name != 'pull_request'
+        run: |
+          mkdir -p site
+          cp cv/it/CV-IT-public.pdf site/CV-IT.pdf
+          cp cv/en/CV_EN-public.pdf site/CV_EN.pdf
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="it">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="robots" content="noindex, nofollow">
+            <title>Mattia Giovannini — CV</title>
+            <style>
+              body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.6; color: #1f2937; }
+              h1 { margin-bottom: 0.25rem; }
+              .subtitle { color: #6b7280; margin-top: 0; }
+              .cards { display: grid; gap: 1rem; margin-top: 2rem; }
+              a.card { display: block; padding: 1.1rem 1.25rem; border: 1px solid #e5e7eb; border-radius: 12px; text-decoration: none; color: inherit; }
+              a.card:hover { border-color: #6366f1; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.12); }
+              .label { font-weight: 700; }
+              .note { margin-top: 2rem; color: #6b7280; font-size: 0.95rem; }
+            </style>
+          </head>
+          <body>
+            <h1>Mattia Giovannini — CV</h1>
+            <p class="subtitle">Public-safe CV versions without phone number.</p>
+            <div class="cards">
+              <a class="card" href="CV-IT.pdf"><span class="label">CV Italiano</span><br>Scarica/apri il PDF in italiano</a>
+              <a class="card" href="CV_EN.pdf"><span class="label">English CV</span><br>Download/open the English PDF</a>
+            </div>
+            <p class="note">Ultimo aggiornamento pubblicato automaticamente tramite GitHub Actions.</p>
+          </body>
+          </html>
+          HTML
+
+      - name: Setup GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name != 'pull_request'
+        id: deployment
+        uses: actions/deploy-pages@v4
