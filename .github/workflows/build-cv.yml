@@ -1,0 +1,43 @@
+name: Build CV PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cv/**/*.tex'
+      - '.github/workflows/build-cv.yml'
+  pull_request:
+    paths:
+      - 'cv/**/*.tex'
+      - '.github/workflows/build-cv.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Compile LaTeX CVs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile CV PDFs
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            cv/it/CV-IT.tex
+            cv/en/CV_EN.tex
+          latexmk_use_xelatex: false
+          args: -pdf -interaction=nonstopmode -file-line-error -halt-on-error
+
+      - name: Upload compiled PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdfs
+          path: |
+            cv/it/CV-IT.pdf
+            cv/en/CV_EN.pdf
+          if-no-files-found: error
