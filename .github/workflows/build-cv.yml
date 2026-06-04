@@ -34,11 +34,16 @@ jobs:
           work_in_root_file_dir: true
           args: -pdf -interaction=nonstopmode -file-line-error -halt-on-error
 
-      - name: Upload compiled PDFs
+      - name: Upload Italian CV PDF
         uses: actions/upload-artifact@v4
         with:
-          name: cv-pdfs
-          path: |
-            cv/it/CV-IT.pdf
-            cv/en/CV_EN.pdf
+          name: cv-it-pdf
+          path: cv/it/CV-IT.pdf
+          if-no-files-found: error
+
+      - name: Upload English CV PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-en-pdf
+          path: cv/en/CV_EN.pdf
           if-no-files-found: error

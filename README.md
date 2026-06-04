@@ -18,7 +18,10 @@ Repository privata per versionare il curriculum in più lingue.
 
 La repository contiene un workflow GitHub Actions (`.github/workflows/build-cv.yml`) che compila automaticamente i PDF quando cambiano i file `.tex` su `main` o in una pull request.
 
-I PDF compilati vengono pubblicati come artifact del workflow con nome `cv-pdfs`.
+I PDF compilati vengono pubblicati come artifact separati:
+
+- `cv-it-pdf` — PDF del CV italiano
+- `cv-en-pdf` — PDF del CV inglese
 
 ## Workflow consigliato
 
