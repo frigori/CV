@@ -31,6 +31,7 @@ jobs:
             cv/it/CV-IT.tex
             cv/en/CV_EN.tex
           latexmk_use_xelatex: false
+          work_in_root_file_dir: true
           args: -pdf -interaction=nonstopmode -file-line-error -halt-on-error
 
       - name: Upload compiled PDFs
