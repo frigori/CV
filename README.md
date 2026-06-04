@@ -43,3 +43,4 @@ Queste versioni vengono pubblicate su GitHub Pages per l'accesso da browser.
 ## Privacy
 
 Questo repository può contenere dati personali. Mantenerlo privato e non pubblicare file con informazioni sensibili non necessarie.
+ 
