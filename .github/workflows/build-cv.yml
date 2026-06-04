@@ -42,6 +42,7 @@ jobs:
             cv/en/CV_EN.tex
             cv/it/CV-IT-public.tex
             cv/en/CV_EN-public.tex
+            cv/it/CV-IT-retail.tex
           latexmk_use_xelatex: false
           work_in_root_file_dir: true
           args: -pdf -interaction=nonstopmode -file-line-error -halt-on-error
@@ -58,6 +59,13 @@ jobs:
         with:
           name: cv-en-pdf
           path: cv/en/CV_EN.pdf
+          if-no-files-found: error
+
+      - name: Upload private Italian retail CV PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-it-retail-pdf
+          path: cv/it/CV-IT-retail.pdf
           if-no-files-found: error
 
       - name: Prepare public site

@@ -1,0 +1,118 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage[margin=2cm, top=1.6cm, bottom=1.6cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{parskip}
+
+% Colors
+\definecolor{accent}{RGB}{80, 100, 200}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+\definecolor{lightgray}{RGB}{130, 130, 130}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accent,
+    linkcolor=accent
+}
+
+% Section formatting
+\titleformat{\section}
+  {\large\bfseries\color{darkgray}}
+  {}{0em}{}
+  [\vspace{0.25em}\color{lightgray}\hrule\vspace{0.35em}]
+
+\titlespacing{\section}{0pt}{0.9em}{0.4em}
+
+\pagestyle{empty}
+
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.2em}
+
+% Custom commands
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill \textcolor{accent}{#2}\\
+  \textit{\textcolor{lightgray}{#3}}%
+  \ifx&#4&\else\\\vspace{0.15em}#4\fi
+  \vspace{0.35em}
+}
+
+\newcommand{\entrylist}[5]{%
+  \noindent\textbf{#1} \hfill \textcolor{accent}{#2}\\
+  \textit{\textcolor{lightgray}{#3}}%
+  \ifx&#4&\else\\\vspace{0.15em}#4\fi
+  \vspace{0.2em}
+  \begin{itemize}#5\end{itemize}
+  \vspace{0.25em}
+}
+
+\newcommand{\skillgroup}[2]{%
+  \noindent\textbf{#1:} #2\par\vspace{0.25em}
+}
+
+%--------------------------
+\begin{document}
+
+%--- HEADER ---%
+\begin{center}
+  {\Huge\bfseries\color{darkgray} Mattia Giovannini}\\[0.35em]
+  {\large\color{accent} Studente universitario — disponibilità part-time retail}\\[0.65em]
+  \textcolor{lightgray}{
+    \faPhone\ +39 XXXXXXXXXX
+    \quad\textbullet\quad
+    \faEnvelope\ \href{mailto:mattia.giovannini02@gmail.com}{mattia.giovannini02@gmail.com}
+    \quad\textbullet\quad
+    \faMapMarker*\ Bologna
+  }
+\end{center}
+
+\vspace{0.35em}
+
+%--- PROFILE ---%
+\section{Profilo}
+
+Studente di Ingegneria Informatica presso l'Università di Bologna, alla ricerca di una prima esperienza part-time nel retail da affiancare al percorso universitario. Persona affidabile, precisa e disponibile all'apprendimento, con buone capacità comunicative maturate in attività educative e collaborative. Interessato in particolare al settore abbigliamento, calzature e retail tecnologico, con predisposizione al contatto con il pubblico, al lavoro in team e all'utilizzo di strumenti digitali.
+
+%--- AVAILABILITY ---%
+\section{Disponibilità}
+
+\skillgroup{Disponibilità oraria}{Part-time, 15--20 ore settimanali, con flessibilità in base agli impegni universitari}
+\skillgroup{Zona}{Bologna città}
+\skillgroup{Mobilità}{Patente B, automunito}
+
+%--- RELEVANT EXPERIENCE ---%
+\section{Esperienze Rilevanti}
+
+\entry{Educatore Volontario presso Centro Estivo}{2016 -- 2020}{Estate Ragazzi, Bologna}
+{Gestione di gruppi di bambini e ragazzi, organizzazione di attività, collaborazione con altri educatori e sviluppo di competenze comunicative, responsabilità e problem solving.}
+
+\entrylist{Webmaster ed Editor Studentesco}{2020 -- 2021}{Liceo Augusto Righi, Bologna}{}{
+  \item Gestione di piattaforme studentesche e contenuti digitali per la comunicazione interna.
+  \item Collaborazione con studenti e docenti, organizzazione dei contenuti e supporto alle attività online.
+}
+
+%--- EDUCATION ---%
+\section{Formazione}
+
+\entry{Laurea Triennale in Ingegneria Informatica}{2021 -- in corso}{Università di Bologna}
+{Percorso universitario in ambito informatico, con sviluppo di competenze analitiche, organizzative e digitali.}
+
+\entry{Diploma di Liceo Scientifico}{2016 -- 2021}{Liceo Augusto Righi, Bologna}{}
+
+%--- SKILLS ---%
+\section{Competenze}
+
+\skillgroup{Relazionali}{Comunicazione, ascolto, collaborazione in team, gestione di gruppi}
+\skillgroup{Organizzative}{Precisione, affidabilità, puntualità, gestione delle attività assegnate}
+\skillgroup{Digitali}{Buona familiarità con strumenti informatici, piattaforme web e strumenti di produttività}
+\skillgroup{Lingue}{Italiano madrelingua, Inglese C1, Francese B1/B2}
+
+\end{document}
