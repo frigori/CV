@@ -43,6 +43,7 @@ jobs:
             cv/it/CV-IT-public.tex
             cv/en/CV_EN-public.tex
             cv/fr/CV_FR-public.tex
+            cv/fr/CV_FR-alternance-ia-data.tex
             cv/fr/CV_FR-alternance-ia-spatial.tex
             cv/it/CV-IT-retail.tex
             cv/it/CV-IT-retail-photo.tex
@@ -69,6 +70,13 @@ jobs:
         with:
           name: cv-fr-public-pdf
           path: cv/fr/CV_FR-public.pdf
+          if-no-files-found: error
+
+      - name: Upload French alternance IA/data/RAG CV PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-fr-alternance-ia-data-pdf
+          path: cv/fr/CV_FR-alternance-ia-data.pdf
           if-no-files-found: error
 
       - name: Upload French alternance IA/spatial CV PDF
@@ -99,6 +107,7 @@ jobs:
           cp cv/it/CV-IT-public.pdf site/CV-IT.pdf
           cp cv/en/CV_EN-public.pdf site/CV_EN.pdf
           cp cv/fr/CV_FR-public.pdf site/CV_FR.pdf
+          cp cv/fr/CV_FR-alternance-ia-data.pdf site/CV_FR-alternance-ia-data.pdf
           cp cv/fr/CV_FR-alternance-ia-spatial.pdf site/CV_FR-alternance-ia-spatial.pdf
           cat > site/index.html <<'HTML'
           <!doctype html>
@@ -126,7 +135,8 @@ jobs:
               <a class="card" href="CV-IT.pdf"><span class="label">CV Italiano</span><br>Scarica/apri il PDF in italiano</a>
               <a class="card" href="CV_EN.pdf"><span class="label">English CV</span><br>Download/open the English PDF</a>
               <a class="card" href="CV_FR.pdf"><span class="label">CV Français</span><br>Télécharger/ouvrir le PDF en français</a>
-              <a class="card" href="CV_FR-alternance-ia-spatial.pdf"><span class="label">CV Alternance IA / Spatial</span><br>Version ciblée pour IA, RAG et systèmes industriels</a>
+              <a class="card" href="CV_FR-alternance-ia-data.pdf"><span class="label">CV Alternance IA / Data / RAG</span><br>Version ciblée pour IA, data science, RAG et assistants IA</a>
+              <a class="card" href="CV_FR-alternance-ia-spatial.pdf"><span class="label">CV Alternance IA / Systèmes critiques / Spatial</span><br>Version ciblée pour Thales, spatial et systèmes industriels</a>
             </div>
             <p class="note">Ultimo aggiornamento pubblicato automaticamente tramite GitHub Actions.</p>
           </body>

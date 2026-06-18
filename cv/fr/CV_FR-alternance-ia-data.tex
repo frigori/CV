@@ -1,0 +1,98 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=1.55cm, top=1.35cm, bottom=1.35cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{parskip}
+
+\definecolor{accent}{RGB}{80, 100, 200}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+\definecolor{lightgray}{RGB}{130, 130, 130}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\titleformat{\section}{\large\bfseries\color{darkgray}}{}{0em}{}[\vspace{0.2em}\color{lightgray}\hrule\vspace{0.3em}]
+\titlespacing{\section}{0pt}{0.75em}{0.35em}
+\pagestyle{empty}
+\setlist[itemize]{noitemsep, topsep=1pt, leftmargin=1.1em}
+
+\newcommand{\entrylist}[5]{%
+  \noindent\textbf{#1} \hfill \textcolor{accent}{#2}\\
+  \textit{\textcolor{lightgray}{#3}}%
+  \ifx&#4&\else\\[-0.05em]#4\fi
+  \vspace{0.15em}
+  \begin{itemize}#5\end{itemize}
+  \vspace{0.1em}
+}
+
+\newcommand{\skillrow}[2]{\textbf{#1} & #2 \\[0.15em]}
+\newcommand{\langentry}[3]{\noindent\textbf{#1} — #2\ifx&#3&\else\hfill\textcolor{lightgray}{\small #3}\fi\par\vspace{0.15em}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries\color{darkgray} Mattia Giovannini}\\[0.3em]
+  {\large\color{accent} Candidature alternance IA / Data Science / RAG}\\[0.45em]
+  \textcolor{lightgray}{\faEnvelope\ \href{mailto:mattia.giovannini6@studio.unibo.it}{mattia.giovannini6@studio.unibo.it}\quad\textbullet\quad\faGithub\ \href{https://github.com/frigori}{github.com/frigori}}
+\end{center}
+
+\section{Profil}
+Étudiant en dernière année de licence en ingénierie informatique à l'Université de Bologne, je recherche un \textbf{master en informatique / IA en France avec une alternance de deux ans}. Profil orienté \textbf{machine learning appliqué}, \textbf{IA générative}, analyse documentaire et développement Python, avec une expérience Erasmus en France et des bases solides en Linux, Git et conteneurisation.
+
+\section{Projets IA / Data}
+
+\entrylist{Mémoire : classification ASD par eye-tracking}{2025 -- 2026}{Université de Bologne / Université de Tours}{Machine learning appliqué à des données cliniques}{
+  \item Classification du trouble du spectre de l'autisme à partir de données d'eye-tracking sur \textbf{92 participants}.
+  \item Pipeline Python / scikit-learn avec extraction de caractéristiques et validation \textbf{Leave-One-Child-Out}.
+  \item Résultats obtenus : \textbf{accuracy 74,7\%} et \textbf{F1-score 0,74} avec un modèle Random Forest.
+}
+
+\entrylist{BOOM GEN AI Challenge 2026 — VEM Sistemi}{2026}{Équipe projet GenAI}{Assistant IA pour l'analyse automatisée d'appels d'offres}{
+  \item Développement d'un assistant GenAI pour extraire et structurer des exigences dans des documents non normalisés.
+  \item Conception d'un moteur de scoring Python pour soutenir l'évaluation \textbf{GO/NO-GO} de candidatures industrielles.
+  \item Utilisation d'\textbf{Azure OpenAI}, prompt engineering et logique RAG/document processing pour classification et enrichissement.
+}
+
+\section{Compétences techniques}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.1cm}X@{}}
+\skillrow{Langages}{Python, Java, C, SQL, JavaScript, Bash}
+\skillrow{IA / Data Science}{scikit-learn, pandas, NumPy, Matplotlib, Jupyter Notebook, classification, feature extraction}
+\skillrow{LLM / GenAI}{Azure OpenAI, prompt engineering, RAG, extraction structurée, analyse documentaire}
+\skillrow{DevOps / Systèmes}{Linux, Git, Docker, Podman, TCP/IP, bases de données relationnelles}
+\end{tabularx}
+
+\section{Formation}
+\entrylist{Licence en ingénierie informatique}{2021 -- juillet 2026 (prévu)}{Université de Bologne}{Moyenne pondérée : 25,67/30}{
+  \item Cours pertinents : algorithmique, probabilités et statistiques, systèmes d'exploitation, réseaux, bases de données, génie logiciel, technologies web.
+}
+
+\entrylist{Erasmus en informatique}{2025}{Université de Tours, France}{Projet ML en environnement académique français}{
+  \item Travail en contexte international francophone; renforcement en analyse de données, Python et méthodologie scientifique.
+}
+
+\section{Projets personnels}
+\begin{itemize}
+  \item \textbf{GitHub :} \href{https://github.com/frigori}{github.com/frigori} — projets académiques, automatisation et expérimentations IA.
+  \item \textbf{Homelab Linux / Podman :} administration de services auto-hébergés, conteneurisation et automatisation système.
+\end{itemize}
+
+\section{Expériences complémentaires}
+\textbf{Webmaster et rédacteur étudiant} — Liceo Augusto Righi, Bologne \hfill \textcolor{accent}{2020 -- 2021}\par
+\textcolor{lightgray}{\small Plateformes étudiantes, contenus numériques et collaboration en équipe.}\par
+\textbf{Animateur bénévole en centre d'été} — Estate Ragazzi, Bologne \hfill \textcolor{accent}{2016 -- 2020}\par
+\textcolor{lightgray}{\small Gestion de groupe, communication et responsabilité.}
+
+\section{Langues}
+\langentry{Italien}{Langue maternelle}{}
+\langentry{Anglais}{C1}{Duolingo English Test 130/160 · CLA C1 · Cambridge FCE B2}
+\langentry{Français}{B1/B2}{CLA B1 · cours B2/C1 suivis à l'Université de Tours}
+
+\end{document}
