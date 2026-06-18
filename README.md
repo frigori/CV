@@ -6,6 +6,7 @@ Repository privata per versionare il curriculum in più lingue.
 
 - `cv/it/` — curriculum in italiano (`CV-IT.tex`)
 - `cv/en/` — curriculum in inglese (`CV_EN.tex`)
+- `cv/fr/` — curriculum in francese e varianti mirate per alternance
 - `data/` — dati condivisi e note di aggiornamento
 - `assets/` — foto, loghi o altri asset opzionali
 
@@ -13,6 +14,8 @@ Repository privata per versionare il curriculum in più lingue.
 
 - Italiano accademico/AI: `cv/it/CV-IT.tex`
 - English academic/AI: `cv/en/CV_EN.tex`
+- Français public-safe: `cv/fr/CV_FR-public.tex`
+- Français alternance IA/spatial/RAG: `cv/fr/CV_FR-alternance-ia-spatial.tex`
 - Italiano retail part-time: `cv/it/CV-IT-retail.tex`
 - Italiano retail part-time con foto: `cv/it/CV-IT-retail-photo.tex`
 
@@ -24,6 +27,8 @@ I PDF completi vengono pubblicati come artifact separati e privati del workflow:
 
 - `cv-it-pdf` — PDF completo del CV italiano
 - `cv-en-pdf` — PDF completo del CV inglese
+- `cv-fr-public-pdf` — PDF francese public-safe
+- `cv-fr-alternance-ia-spatial-pdf` — PDF francese mirato alternance IA/spatial/RAG
 - `cv-it-retail-pdf` — PDF privato del CV italiano orientato a retail/lavoro part-time
 - `cv-it-retail-photo-pdf` — PDF privato del CV italiano retail con foto
 
@@ -31,6 +36,8 @@ Le versioni public-safe, senza numero di telefono, sono compilate da:
 
 - `cv/it/CV-IT-public.tex`
 - `cv/en/CV_EN-public.tex`
+- `cv/fr/CV_FR-public.tex`
+- `cv/fr/CV_FR-alternance-ia-spatial.tex`
 
 Queste versioni vengono pubblicate su GitHub Pages per l'accesso da browser.
 

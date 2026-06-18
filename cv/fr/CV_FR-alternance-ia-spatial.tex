@@ -1,0 +1,149 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=1.85cm, top=1.55cm, bottom=1.55cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{parskip}
+
+% Colors
+\definecolor{accent}{RGB}{80, 100, 200}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+\definecolor{lightgray}{RGB}{130, 130, 130}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accent,
+    linkcolor=accent
+}
+
+% Section formatting
+\titleformat{\section}
+  {\large\bfseries\color{darkgray}}
+  {}{0em}{}
+  [\vspace{0.25em}\color{lightgray}\hrule\vspace{0.35em}]
+
+\titlespacing{\section}{0pt}{0.95em}{0.45em}
+
+\pagestyle{empty}
+
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.2em}
+
+% Custom commands
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill \textcolor{accent}{#2}\\
+  \textit{\textcolor{lightgray}{#3}}%
+  \ifx&#4&\else\\\vspace{0.15em}#4\fi
+  \vspace{0.35em}
+}
+
+\newcommand{\entrylist}[5]{%
+  \noindent\textbf{#1} \hfill \textcolor{accent}{#2}\\
+  \textit{\textcolor{lightgray}{#3}}%
+  \ifx&#4&\else\\\vspace{0.15em}#4\fi
+  \vspace{0.25em}
+  \begin{itemize}#5\end{itemize}
+  \vspace{0.2em}
+}
+
+\newcommand{\langentry}[3]{%
+  \noindent\textbf{#1} — #2%
+  \ifx&#3&\else\\\textcolor{lightgray}{\small #3}\fi
+  \vspace{0.3em}
+}
+
+\newcommand{\skillgroup}[2]{%
+  \noindent\textbf{#1 :} #2\par\vspace{0.25em}
+}
+
+%--------------------------
+\begin{document}
+
+%--- HEADER ---%
+\begin{center}
+  {\Huge\bfseries\color{darkgray} Mattia Giovannini}\\[0.35em]
+  {\large\color{accent} Candidature alternance IA / RAG / systèmes spatiaux}\\[0.6em]
+  \textcolor{lightgray}{
+    \faEnvelope\ \href{mailto:mattia.giovannini6@studio.unibo.it}{mattia.giovannini6@studio.unibo.it}
+    \quad\textbullet\quad
+    \faGithub\ \href{https://github.com/frigori}{github.com/frigori}
+  }
+\end{center}
+
+\vspace{0.35em}
+
+%--- PROFIL ---%
+\section{Profil ciblé}
+
+Étudiant en dernière année de licence en ingénierie informatique à l'Université de Bologne, je souhaite intégrer un master en informatique / intelligence artificielle en France et effectuer une \textbf{alternance de deux ans}. Mon profil combine \textbf{machine learning appliqué}, \textbf{IA générative}, analyse documentaire et bases solides en génie logiciel, Linux et conteneurisation. Je cherche à appliquer l'IA à des systèmes industriels exigeants, notamment dans des contextes où la fiabilité, la sécurité, l'hébergement on-premise et l'aide à la décision sont essentiels.
+
+%--- ADEQUATION POSTE ---%
+\section{Adéquation avec une alternance IA industrielle}
+
+\begin{itemize}
+  \item \textbf{LLM / RAG / assistants IA :} expérience projet sur un assistant GenAI pour analyser des documents complexes, extraire/classer des exigences et soutenir une décision GO/NO-GO.
+  \item \textbf{Machine learning appliqué :} mémoire sur la détection du trouble du spectre de l'autisme à partir de données d'eye-tracking, avec classification et extraction de caractéristiques.
+  \item \textbf{Contexte franco-international :} semestre Erasmus à l'Université de Tours, projet ML en environnement académique français.
+  \item \textbf{Systèmes et contraintes industrielles :} Linux, TCP/IP, Git, bases de données, utilisation de Docker/Podman; intérêt pour les architectures on-premise, la sécurité et les systèmes critiques.
+\end{itemize}
+
+%--- FORMATION ---%
+\section{Formation}
+
+\entrylist{Licence en ingénierie informatique}{2021 -- juillet 2026 (prévu)}{Université de Bologne}{Moyenne pondérée : 25,67/30}{
+  \item Cours pertinents : algorithmique, probabilités et statistiques, systèmes d'exploitation, réseaux informatiques, génie logiciel, technologies web, bases de données, architecture des ordinateurs.
+  \item \textbf{Mémoire :} \textit{Détection du trouble du spectre de l'autisme à partir de données d'eye-tracking par machine learning} — classification et analyse de signaux appliquées à des enregistrements cliniques d'oculométrie.
+}
+
+\entry{Diplôme de lycée scientifique}{2016 -- 2021}{Liceo Augusto Righi, Bologne}{}
+
+%--- PROJETS ---%
+\section{Projets pertinents}
+
+\entrylist{BOOM GEN AI Challenge 2026 — VEM Sistemi}{2026}{Équipe projet GenAI}{}{
+  \item Développement d'un \textbf{assistant GenAI} pour l'analyse automatisée d'appels d'offres et l'aide à la décision \textbf{GO/NO-GO}.
+  \item Implémentation d'un \textbf{module de scoring en Python} pour comparer des exigences documentaires avec les capacités de l'entreprise.
+  \item Utilisation d'\textbf{Azure OpenAI} et de techniques de \textbf{prompt engineering} pour l'extraction, la classification et l'enrichissement d'informations.
+  \item Contribution à un pipeline de \textbf{parsing documentaire} pour structurer des documents non normalisés — compétence transférable vers un assistant RAG sur documentation technique, procédures et tickets historiques.
+}
+
+\entrylist{Projet Erasmus : machine learning et données d'eye-tracking}{2025}{Université de Tours, France}{}{
+  \item Projet de recherche appliquée sur l'analyse du trouble du spectre de l'autisme à partir de données d'oculométrie.
+  \item Extraction de caractéristiques, classification et expérimentation en Python dans un contexte scientifique.
+  \item Travail dans un environnement académique français, avec adaptation à des méthodes et attentes internationales.
+}
+
+%--- COMPETENCES ---%
+\section{Compétences techniques}
+
+\skillgroup{IA \& données}{Python, scikit-learn, NumPy, pandas, Matplotlib, Jupyter Notebook, classification, feature extraction, analyse documentaire}
+\skillgroup{IA générative}{Prompt engineering, Azure OpenAI, conception d'assistants, extraction et structuration d'exigences, intérêt pour RAG et évaluation de modèles}
+\skillgroup{Développement}{C, Java, Python, JavaScript, HTML/CSS, SQL, Bash, Git, \LaTeX, MATLAB}
+\skillgroup{Systèmes}{Linux, TCP/IP, programmation socket, bases de données relationnelles, utilisation de Docker \& Podman; bases à renforcer en Kubernetes}
+\skillgroup{Domaines d'intérêt}{IA appliquée aux systèmes critiques, spatial, assistants conversationnels, architectures on-premise, cloud/edge, automatisation}
+
+%--- EXPERIENCES COMPLEMENTAIRES ---%
+\section{Expériences complémentaires}
+
+\entrylist{Webmaster et rédacteur étudiant}{2020 -- 2021}{Liceo Augusto Righi, Bologne}{}{
+  \item Conception et gestion de plateformes étudiantes, coordination de contenus numériques et collaboration en équipe.
+}
+
+\entry{Animateur bénévole en centre d'été}{2016 -- 2020}{Estate Ragazzi, Bologne}{Gestion de groupe, communication, responsabilité et travail en équipe.}
+
+%--- LANGUES ---%
+\section{Langues}
+
+\langentry{Italien}{Langue maternelle}{}
+\langentry{Anglais}{C1}{Duolingo English Test : 130/160 (C1) · Certification CLA C1 · Cambridge First Certificate B2}
+\langentry{Français}{B1/B2}{Certification CLA B1 · cours B2/C1 suivis à l'Université de Tours · objectif : B2 opérationnel pour l'alternance}
+
+\end{document}

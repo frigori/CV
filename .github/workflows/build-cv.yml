@@ -42,6 +42,8 @@ jobs:
             cv/en/CV_EN.tex
             cv/it/CV-IT-public.tex
             cv/en/CV_EN-public.tex
+            cv/fr/CV_FR-public.tex
+            cv/fr/CV_FR-alternance-ia-spatial.tex
             cv/it/CV-IT-retail.tex
             cv/it/CV-IT-retail-photo.tex
           latexmk_use_xelatex: false
@@ -60,6 +62,20 @@ jobs:
         with:
           name: cv-en-pdf
           path: cv/en/CV_EN.pdf
+          if-no-files-found: error
+
+      - name: Upload French public-safe CV PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-fr-public-pdf
+          path: cv/fr/CV_FR-public.pdf
+          if-no-files-found: error
+
+      - name: Upload French alternance IA/spatial CV PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-fr-alternance-ia-spatial-pdf
+          path: cv/fr/CV_FR-alternance-ia-spatial.pdf
           if-no-files-found: error
 
       - name: Upload private Italian retail CV PDF
@@ -82,6 +98,8 @@ jobs:
           mkdir -p site
           cp cv/it/CV-IT-public.pdf site/CV-IT.pdf
           cp cv/en/CV_EN-public.pdf site/CV_EN.pdf
+          cp cv/fr/CV_FR-public.pdf site/CV_FR.pdf
+          cp cv/fr/CV_FR-alternance-ia-spatial.pdf site/CV_FR-alternance-ia-spatial.pdf
           cat > site/index.html <<'HTML'
           <!doctype html>
           <html lang="it">
@@ -107,6 +125,8 @@ jobs:
             <div class="cards">
               <a class="card" href="CV-IT.pdf"><span class="label">CV Italiano</span><br>Scarica/apri il PDF in italiano</a>
               <a class="card" href="CV_EN.pdf"><span class="label">English CV</span><br>Download/open the English PDF</a>
+              <a class="card" href="CV_FR.pdf"><span class="label">CV Français</span><br>Télécharger/ouvrir le PDF en français</a>
+              <a class="card" href="CV_FR-alternance-ia-spatial.pdf"><span class="label">CV Alternance IA / Spatial</span><br>Version ciblée pour IA, RAG et systèmes industriels</a>
             </div>
             <p class="note">Ultimo aggiornamento pubblicato automaticamente tramite GitHub Actions.</p>
           </body>
