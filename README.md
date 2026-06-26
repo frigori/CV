@@ -14,6 +14,7 @@ Repository privata per versionare il curriculum in più lingue.
 
 - Italiano accademico/AI: `cv/it/CV-IT.tex`
 - English academic/AI: `cv/en/CV_EN.tex`
+- English CBI/Unibo application variant: `cv/en/CV_EN-cbi-unibo.tex`
 - Français public-safe: `cv/fr/CV_FR-public.tex`
 - Français alternance IA/data/RAG: `cv/fr/CV_FR-alternance-ia-data.tex`
 - Français alternance IA/systèmes critiques/spatial: `cv/fr/CV_FR-alternance-ia-spatial.tex`
@@ -28,6 +29,7 @@ I PDF completi vengono pubblicati come artifact separati e privati del workflow:
 
 - `cv-it-pdf` — PDF completo del CV italiano
 - `cv-en-pdf` — PDF completo del CV inglese
+- `cv-en-cbi-unibo-pdf` — PDF inglese mirato per candidatura CBI/Unibo
 - `cv-fr-public-pdf` — PDF francese public-safe
 - `cv-fr-alternance-ia-data-pdf` — PDF francese mirato alternance IA/data/RAG
 - `cv-fr-alternance-ia-spatial-pdf` — PDF francese mirato alternance IA/sistemi critici/spatial

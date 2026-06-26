@@ -40,6 +40,7 @@ jobs:
           root_file: |
             cv/it/CV-IT.tex
             cv/en/CV_EN.tex
+            cv/en/CV_EN-cbi-unibo.tex
             cv/it/CV-IT-public.tex
             cv/en/CV_EN-public.tex
             cv/fr/CV_FR-public.tex
@@ -63,6 +64,13 @@ jobs:
         with:
           name: cv-en-pdf
           path: cv/en/CV_EN.pdf
+          if-no-files-found: error
+
+      - name: Upload private English CBI/Unibo CV PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-en-cbi-unibo-pdf
+          path: cv/en/CV_EN-cbi-unibo.pdf
           if-no-files-found: error
 
       - name: Upload French public-safe CV PDF
