@@ -115,8 +115,6 @@ jobs:
           cp cv/it/CV-IT-public.pdf site/CV-IT.pdf
           cp cv/en/CV_EN-public.pdf site/CV_EN.pdf
           cp cv/fr/CV_FR-public.pdf site/CV_FR.pdf
-          cp cv/fr/CV_FR-alternance-ia-data.pdf site/CV_FR-alternance-ia-data.pdf
-          cp cv/fr/CV_FR-alternance-ia-spatial.pdf site/CV_FR-alternance-ia-spatial.pdf
           cat > site/index.html <<'HTML'
           <!doctype html>
           <html lang="it">
@@ -126,25 +124,27 @@ jobs:
             <meta name="robots" content="noindex, nofollow">
             <title>Mattia Giovannini — CV</title>
             <style>
-              body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.6; color: #1f2937; }
-              h1 { margin-bottom: 0.25rem; }
-              .subtitle { color: #6b7280; margin-top: 0; }
-              .cards { display: grid; gap: 1rem; margin-top: 2rem; }
-              a.card { display: block; padding: 1.1rem 1.25rem; border: 1px solid #e5e7eb; border-radius: 12px; text-decoration: none; color: inherit; }
-              a.card:hover { border-color: #6366f1; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.12); }
-              .label { font-weight: 700; }
-              .note { margin-top: 2rem; color: #6b7280; font-size: 0.95rem; }
+              :root { --ink: #201d18; --sub: #6b6459; --line: #e6e1d6; --panel: #faf8f4; --amber: #a8660c; }
+              * { box-sizing: border-box; }
+              body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 34rem; margin: 4.5rem auto; padding: 0 1.5rem; line-height: 1.6; color: var(--ink); background: #fff; }
+              h1 { margin: 0 0 0.3rem; font-size: 1.6rem; }
+              .subtitle { color: var(--sub); margin: 0 0 2.25rem; font-size: 0.95rem; }
+              .cards { display: grid; gap: 0.75rem; }
+              a.card { display: flex; align-items: baseline; gap: 0.85rem; padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: inherit; background: var(--panel); transition: border-color 0.15s ease, background 0.15s ease; }
+              a.card:hover { border-color: var(--amber); background: #fff; }
+              .code { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.78rem; font-weight: 600; color: var(--amber); flex-shrink: 0; width: 1.6rem; }
+              .label { font-weight: 600; display: block; }
+              .desc { color: var(--sub); font-size: 0.88rem; }
+              .note { margin-top: 2.5rem; color: var(--sub); font-size: 0.85rem; }
             </style>
           </head>
           <body>
             <h1>Mattia Giovannini — CV</h1>
-            <p class="subtitle">Public-safe CV versions without phone number.</p>
+            <p class="subtitle">Public-safe CV versions, without phone number.</p>
             <div class="cards">
-              <a class="card" href="CV-IT.pdf"><span class="label">CV Italiano</span><br>Scarica/apri il PDF in italiano</a>
-              <a class="card" href="CV_EN.pdf"><span class="label">English CV</span><br>Download/open the English PDF</a>
-              <a class="card" href="CV_FR.pdf"><span class="label">CV Français</span><br>Télécharger/ouvrir le PDF en français</a>
-              <a class="card" href="CV_FR-alternance-ia-data.pdf"><span class="label">CV Alternance IA / Data / RAG</span><br>Version ciblée pour IA, data science, RAG et assistants IA</a>
-              <a class="card" href="CV_FR-alternance-ia-spatial.pdf"><span class="label">CV Alternance IA / Systèmes critiques / Spatial</span><br>Version ciblée pour Thales, spatial et systèmes industriels</a>
+              <a class="card" href="CV-IT.pdf"><span class="code">IT</span><span><span class="label">CV Italiano</span><span class="desc">Scarica/apri il PDF in italiano</span></span></a>
+              <a class="card" href="CV_EN.pdf"><span class="code">EN</span><span><span class="label">English CV</span><span class="desc">Download/open the English PDF</span></span></a>
+              <a class="card" href="CV_FR.pdf"><span class="code">FR</span><span><span class="label">CV Français</span><span class="desc">Télécharger/ouvrir le PDF en français</span></span></a>
             </div>
             <p class="note">Ultimo aggiornamento pubblicato automaticamente tramite GitHub Actions.</p>
           </body>
