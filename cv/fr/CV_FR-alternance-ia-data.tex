@@ -29,7 +29,7 @@
   \textit{\textcolor{lightgray}{#3}}%
   \ifx&#4&\else\\[-0.05em]#4\fi
   \vspace{0.15em}
-  \begin{itemize}#5\end{itemize}
+  \ifx&#5&\else\begin{itemize}#5\end{itemize}\fi
   \vspace{0.1em}
 }
 
