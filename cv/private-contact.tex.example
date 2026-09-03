@@ -1,4 +1,0 @@
-% Copy this file to cv/private/contact.tex (gitignored) and fill in real values.
-% Needed only to compile the private CV variants (CV-IT.tex, CV_EN.tex,
-% CV-IT-retail*.tex, CV_EN-cbi-unibo.tex) locally.
-\newcommand{\PrivatePhone}{+39 0000000000}
